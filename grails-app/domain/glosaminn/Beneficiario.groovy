@@ -1,11 +1,14 @@
 package glosaminn
 
+import glosaminn.enums.RNSimNao
+
 class Beneficiario {
 
     String numeroCarteira
-    String atendimentoRN
+    RNSimNao atendimentoRN
     String nomeBeneficiario
 
     static constraints = {
+        numeroCarteira unique: true
     }
 }
