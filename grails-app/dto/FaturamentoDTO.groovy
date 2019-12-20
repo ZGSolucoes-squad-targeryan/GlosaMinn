@@ -1,0 +1,5 @@
+package glosaminn
+
+class FaturamentoDTO {
+
+}
