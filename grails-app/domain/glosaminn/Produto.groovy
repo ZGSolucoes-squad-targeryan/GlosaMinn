@@ -17,6 +17,11 @@ class Produto {
     BigDecimal valorUnitario
     BigDecimal valorTotal
 
+    String motivoGlosa
+    BigDecimal valorApresentado
+    BigDecimal valorPago
+    BigDecimal valorGlosa
+
     static constraints = {
     }
 
