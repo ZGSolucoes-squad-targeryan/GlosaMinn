@@ -20,6 +20,21 @@ class Guia {
 
     static constraints = {
 		associate nullable: false
+		numeroGuiaPrestador nullable: true
+		numeroGuiaSolicitacaoInternacao nullable: true
+		numeroGuiaOperadora nullable: true
+		senha nullable: true
+		dadosBeneficiario nullable: true
+		procedimentosExecutados nullable: true
+		valorProcedimentos nullable: true
+		valorDiarias nullable: true
+		valorTaxasAlugueis nullable: true
+		valorMateriais nullable: true
+		valorMedicamentos nullable: true
+		valorOPME nullable: true
+		valorGasesMedicinais nullable: true
+		valorTotalGeral nullable: true
+		lote nullable: true
     }
 
 	static hasOne = [dadosBeneficiario: Beneficiario]

@@ -1,9 +1,9 @@
 package glosaminn
 
-import grails.testing.gorm.DomainUnitTest
+import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
-class GuiaConvenioSpec extends Specification implements DomainUnitTest<GuiaConvenio> {
+class ConciliationServiceSpec extends Specification implements ServiceUnitTest<ConciliationService> {
 
 	def setup() {
 	}
