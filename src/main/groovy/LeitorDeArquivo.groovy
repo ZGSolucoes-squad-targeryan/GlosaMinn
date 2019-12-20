@@ -61,7 +61,7 @@ class LeitorDeArquivo {
                                 \"horaFinal\":"${horaFinal}",
                                 \"codigoTabela\":"${codigoTabela}",
                                 \"codigoProcedimento\":"${codigoProcedimento}",
-                                \"descricaoProcedimento\":"${descricaoProcedimento}",
+                                \"descricaoProcedimento\":"${descricaoProcedimento.replaceAll('\n', ' ')}",
                                 \"quantidadeExecutada\":"${quantidadeExecutada}",
                                 \"valorUnitario\":"${valorUnitario}",
                                 \"unidadeMedida\":"${unidadeMedida}",
@@ -81,8 +81,10 @@ class LeitorDeArquivo {
             }
         }
 
-        sb.append(']')
+        String resultadoFinal = sb.toString()
+        resultadoFinal = resultadoFinal.find(/(?s)\[.+}/)
+        resultadoFinal = resultadoFinal.concat(']')
 
-        return sb.toString()
+        return resultadoFinal
     }
 }
