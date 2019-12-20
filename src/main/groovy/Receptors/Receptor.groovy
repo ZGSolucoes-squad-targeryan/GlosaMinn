@@ -1,6 +1,7 @@
 package Receptors
 
 import DTOs.DtoArquivoConvenio
+import DTOs.DtoArquivoprestador
 import com.google.gson.Gson
 import groovy.transform.CompileStatic
 
