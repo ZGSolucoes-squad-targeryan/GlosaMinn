@@ -8,9 +8,9 @@ class Beneficiario {
     RNSimNao atendimentoRN
     String nomeBeneficiario
 
+    Guia guia
+
     static constraints = {
-        numeroCarteira unique: true
     }
 
-    static belongsTo = [guia: Guia]
 }

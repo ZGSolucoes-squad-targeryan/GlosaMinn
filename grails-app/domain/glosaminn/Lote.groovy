@@ -5,8 +5,11 @@ class Lote {
     String numeroLote
     List<Guia> guiasTISS
 
+    Arquivo arquivo
+
     static constraints = {
     }
 
-    static belongsTo = [arquivo: Arquivo]
+    static hasMany = [guiasTISS: Guia]
+
 }

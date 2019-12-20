@@ -22,7 +22,9 @@ class Guia {
 		associate nullable: false
     }
 
-	static hasOne = [beneficiario: Beneficiario]
+	static hasOne = [dadosBeneficiario: Beneficiario]
 
-	static hasMany = [produtos: Produto]
+	static hasMany = [procedimentosExecutados: Produto]
+
+	static belongsTo = [lote: Lote]
 }

@@ -20,4 +20,6 @@ class Produto {
     static constraints = {
     }
 
+    static belongsTo = [guia: Guia]
+
 }

@@ -7,4 +7,6 @@ class Competencia {
 
     static constraints = {
     }
+
+    static hasOne = [convenio: Convenio]
 }
