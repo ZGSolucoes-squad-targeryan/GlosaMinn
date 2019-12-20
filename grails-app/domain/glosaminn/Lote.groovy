@@ -2,14 +2,16 @@ package glosaminn
 
 class Lote {
 
-    String numeroLote
-    List<Guia> guiasTISS
+	String numeroLote
+	List<Guia> guiasTISS
 
-    Arquivo arquivo
+	Arquivo arquivo
 
-    static constraints = {
-    }
+	static constraints = {
+		guiasTISS nullable: true
+		numeroLote nullable: true
+	}
 
-    static hasMany = [guiasTISS: Guia]
+	static hasMany = [guiasTISS: Guia]
 
 }

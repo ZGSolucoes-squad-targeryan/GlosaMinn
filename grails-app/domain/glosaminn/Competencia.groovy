@@ -6,6 +6,8 @@ class Competencia {
     Convenio convenio
 
     static constraints = {
+        descricaoCompetencia nullable: true
+        convenio nullable: true
     }
 
 }

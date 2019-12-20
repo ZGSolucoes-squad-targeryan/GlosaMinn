@@ -11,6 +11,9 @@ class Beneficiario {
     Guia guia
 
     static constraints = {
+		numeroCarteira nullable: true
+		atendimentoRN nullable: true
+		nomeBeneficiario nullable: true
     }
 
 	static mapping = {
