@@ -2,11 +2,10 @@ package glosaminn
 
 class Competencia {
 
-    Convenio convenio
     String descricaoCompetencia
+    Convenio convenio
 
     static constraints = {
     }
 
-    static hasOne = [convenio: Convenio]
 }

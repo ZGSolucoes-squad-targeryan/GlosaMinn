@@ -13,4 +13,8 @@ class Beneficiario {
     static constraints = {
     }
 
+	static mapping = {
+		atendimentoRN enumType: 'string'
+	}
+
 }
