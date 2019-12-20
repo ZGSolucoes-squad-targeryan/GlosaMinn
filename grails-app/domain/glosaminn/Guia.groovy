@@ -16,7 +16,13 @@ class Guia {
     BigDecimal valorOPME
     BigDecimal valorGasesMedicinais
     BigDecimal valorTotalGeral
+	Boolean associate = false
 
     static constraints = {
+		associate nullable: false
     }
+
+	static hasOne = [beneficiario: Beneficiario]
+
+	static hasMany = [produtos: Produto]
 }

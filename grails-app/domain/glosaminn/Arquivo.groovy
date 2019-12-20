@@ -7,4 +7,6 @@ class Arquivo {
 	static constraints = {
 		fileName unique: true
 	}
+
+	static hasOne = [lote: Lote]
 }

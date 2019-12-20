@@ -7,4 +7,6 @@ class Lote {
 
     static constraints = {
     }
+
+    static belongsTo = [arquivo: Arquivo]
 }

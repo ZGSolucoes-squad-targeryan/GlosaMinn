@@ -11,4 +11,6 @@ class Beneficiario {
     static constraints = {
         numeroCarteira unique: true
     }
+
+    static belongsTo = [guia: Guia]
 }

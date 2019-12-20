@@ -19,4 +19,5 @@ class Produto {
 
     static constraints = {
     }
+
 }
