@@ -17,7 +17,6 @@ class Guia {
     BigDecimal valorGasesMedicinais
     BigDecimal valorTotalGeral
 
-
     static constraints = {
     }
 }
