@@ -11,7 +11,6 @@ class Produto {
     Time horaFinal
     String codigoTabela
     String codigoProcedimento
-    String descricaoProcedimento
     BigDecimal quantidadeExecutada
     BigDecimal reducaoAcrescimo
     BigDecimal valorUnitario
