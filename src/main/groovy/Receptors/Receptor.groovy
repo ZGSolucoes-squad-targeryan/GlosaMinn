@@ -11,8 +11,8 @@ class Receptor {
         return new Gson().fromJson(jsonConvenio, DtoArquivoConvenio[].class)
     }
 
-    static DtoArquivoConvenio[] getJsonHospital(String jsonConvenio) {
-        return new Gson().fromJson(jsonConvenio, DtoArquivoConvenio[].class)
+    static DtoArquivoprestador[] getJsonHospital(String jsonConvenio) {
+        return new Gson().fromJson(jsonConvenio, DtoArquivoprestador[].class)
     }
 
 }
