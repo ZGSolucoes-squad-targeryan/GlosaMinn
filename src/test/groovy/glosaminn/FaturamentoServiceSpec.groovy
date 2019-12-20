@@ -37,4 +37,16 @@ class FaturamentoServiceSpec extends Specification implements ServiceUnitTest<Fa
 
 	}
 
+	void "obtenhaListaDeJsonDeFaturamento"() {
+		setup:
+		FaturamentoService faturamentoService = new FaturamentoService()
+
+		when:
+		List<Map> arquivos = faturamentoService.obtenhaListaDeMapaDeFaturamento('glosamaxx', '2016-02-29')
+
+		then:
+		!arquivos.isEmpty()
+
+	}
+
 }

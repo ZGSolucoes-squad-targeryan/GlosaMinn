@@ -1,21 +1,35 @@
 package glosaminn
 
-import static groovy.json.JsonOutput.*
-
 class FaturamentoService {
 
-	List<String> obtenhaJsonFaturamento(String convenio, String competencia) {
+	List<Map> obtenhaListaDeMapaDeFaturamento(String convenio, String competencia) {
 		List<Node> nosDeFaturamento = obtenhaListaDeNosFaturamento(convenio, competencia)
-		List<String> resultado = nosDeFaturamento.collect { campo ->
-			toJson(
+		nosDeFaturamento.collect { arquivo ->
+			arquivo.guiasTISS.guiaResumoInternacao.procedimentosExecutados*.collect { procedimento ->
 				[
-						lote: 1
-
+						lote : arquivo.numeroLote.text(),
+						numeroGuiaPrestador : arquivo.guiasTISS.guiaResumoInternacao.numeroGuiaPrestador.text(),
+						numeroSolicitacaoInternacao : arquivo.guiasTISS.guiaResumoInternacao.numeroGuiaSolicitacaoInternacao.text(),
+						numeroGuiaOperadora : arquivo.guiasTISS.guiaResumoInternacao.numeroGuiaOperadora.text(),
+						senha : arquivo.guiasTISS.guiaResumoInternacao.senha.text(),
+						matricula : arquivo.guiasTISS.guiaResumoInternacao.dadosBeneficiario.numeroCarteira.text(),
+						RN : arquivo.guiasTISS.guiaResumoInternacao.dadosBeneficiario.atendimentoRN.text(),
+						nome : arquivo.guiasTISS.guiaResumoInternacao.dadosBeneficiario.nomeBeneficiario.text(),
+						dataExecucao: procedimento.dataExecucao.text(),
+						horaInicial: procedimento.horaInicial.text(),
+						horaFinal: procedimento.horaFinal.text(),
+						codigoTabela: procedimento.codigoTabela.text(),
+						codigoProcedimento: procedimento.codigoProcedimento.text(),
+						descricaoProcedimento: procedimento.descricaoProcedimento.text(),
+						quantidadeExecutada: procedimento.quantidadeExecutada.text(),
+						reducacaoAcrescimo: procedimento.reducacaoAcrescimo.text(),
+						valorUnitario: procedimento.valorUnitario.text(),
+						valorTotal: procedimento.valorTotal.text()
 				]
-			)
+			}
 		}
 
-		return resultado
+
 	}
 
 	List<Node> obtenhaListaDeNosFaturamento(String convenio, String competencia) {
@@ -28,7 +42,6 @@ class FaturamentoService {
 
 		new File("/home/zeroglosa/demonstrativos-faturamento/faturamento_${convenio}")
 				.eachFileMatch(~/(faturamento)_(${convenio})_(${competencia})_(.*).xml/) { arquivo ->
-			println arquivo.getName()
 			arquivos.add(arquivo)
 		}
 
