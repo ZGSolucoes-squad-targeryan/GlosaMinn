@@ -1,3 +1,5 @@
+package DTOs
+
 import groovy.transform.CompileStatic
 
 @CompileStatic

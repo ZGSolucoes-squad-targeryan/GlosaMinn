@@ -1,3 +1,6 @@
+package Receptors
+
+import DTOs.DtoArquivoConvenio
 import com.google.gson.Gson
 import groovy.transform.CompileStatic
 
@@ -5,11 +8,11 @@ import groovy.transform.CompileStatic
 class Receptor {
 
     static DtoArquivoConvenio[] getJsonConvenio(String jsonConvenio) {
-        return new Gson().fromJson(jsonConvenio, DtoArquivoConvenio[].class);
+        return new Gson().fromJson(jsonConvenio, DtoArquivoConvenio[].class)
     }
 
     static DtoArquivoConvenio[] getJsonHospital(String jsonConvenio) {
-        return new Gson().fromJson(jsonConvenio, DtoArquivoConvenio[].class);
+        return new Gson().fromJson(jsonConvenio, DtoArquivoConvenio[].class)
     }
 
 }

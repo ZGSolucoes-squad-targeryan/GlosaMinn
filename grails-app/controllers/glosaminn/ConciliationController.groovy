@@ -1,21 +1,18 @@
 package glosaminn
 
 import javassist.NotFoundException
-
-import javax.validation.constraints.NotNull
-
-import static org.springframework.http.HttpStatus.OK
+import org.hibernate.validator.constraints.NotBlank
 
 class ConciliationController {
 
-	def showConciliation(@NotNull final String convenioNome, final String competencia) {
+	ConciliationService conciliationService
+
+	def showConciliation(@NotBlank final String convenioNome, final String competencia) {
 		final Convenio convenio = Convenio.findByNome(convenioNome)
 		if (!convenio) {
 			throw new NotFoundException('Convênio não encontrado')
 		}
 
-		respond status: OK
-
-		//call respond service(convenio, competencia)
+		respond conciliationService.doConciliation(convenio, competencia)
 	}
 }

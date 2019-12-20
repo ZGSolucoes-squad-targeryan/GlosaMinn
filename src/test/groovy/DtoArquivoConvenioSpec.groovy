@@ -1,3 +1,5 @@
+import DTOs.DtoArquivoConvenio
+import Receptors.Receptor
 import spock.lang.Specification
 
 class DtoArquivoConvenioSpec extends Specification {
